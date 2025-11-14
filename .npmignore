@@ -1,0 +1,25 @@
+# Source files
+src/
+test/
+tsconfig.json
+tsup.config.ts
+
+# Development files
+*.log
+.DS_Store
+*.tsbuildinfo
+
+# Documentation
+INSTRUCTIONS.MD
+placetext-package-setup.plan.md
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+

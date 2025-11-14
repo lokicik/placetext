@@ -1,0 +1,74 @@
+{
+  "name": "placetext",
+  "version": "0.1.0",
+  "description": "Zero-dependency, corpus-based placeholder text generator with deterministic mode for testing",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./core/generator": {
+      "require": "./dist/core/generator.cjs",
+      "import": "./dist/core/generator.js",
+      "types": "./dist/core/generator.d.ts"
+    },
+    "./corpora/*": {
+      "require": "./dist/corpora/*.cjs",
+      "import": "./dist/corpora/*.js",
+      "types": "./dist/corpora/*.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run build && npm test",
+    "example": "npm run build && tsx examples/basic-usage.ts"
+  },
+  "keywords": [
+    "placeholder",
+    "text",
+    "generator",
+    "lorem",
+    "ipsum",
+    "corpus",
+    "deterministic",
+    "zero-dependencies",
+    "typescript",
+    "testing",
+    "fixture",
+    "mock-data",
+    "lorem-ipsum",
+    "placeholder-text"
+  ],
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lokicik/placetext.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lokicik/placetext/issues"
+  },
+  "homepage": "https://github.com/lokicik/placetext#readme",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "sideEffects": false
+}
